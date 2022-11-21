@@ -4,6 +4,8 @@ import com.java.learnmybatis.entity.UpsAppInfo;
 import com.java.learnmybatis.entity.UpsAppInfoExample;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -22,6 +24,8 @@ public interface UpsAppInfoMapper {
     List<UpsAppInfo> selectByExample(UpsAppInfoExample example);
 
     UpsAppInfo selectByPrimaryKey(Integer id);
+
+    List<UpsAppInfo> selectByAppkeyIds(List<Integer> ids);
 
     int updateByExampleSelective(@Param("record") UpsAppInfo record, @Param("example") UpsAppInfoExample example);
 

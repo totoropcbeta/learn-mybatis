@@ -13,15 +13,22 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 public class ResultVo implements Serializable {
-    private Integer code;
+    private Integer status;
     private String message;
     private Object data;
 
     public static ResultVo success(Object data) {
         ResultVo resultVo = new ResultVo();
-        resultVo.setCode(ResultCode.SUCCSS.getCode());
+        resultVo.setStatus(ResultCode.SUCCSS.getStatus());
         resultVo.setMessage(ResultCode.SUCCSS.getMessage());
         resultVo.setData(data);
+        return resultVo;
+    }
+
+    public static ResultVo fail() {
+        ResultVo resultVo = new ResultVo();
+        resultVo.setStatus(ResultCode.FAIL.getStatus());
+        resultVo.setMessage(ResultCode.FAIL.getMessage());
         return resultVo;
     }
 }

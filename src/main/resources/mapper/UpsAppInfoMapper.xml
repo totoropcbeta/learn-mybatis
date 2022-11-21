@@ -108,6 +108,14 @@
         from ups_app_info
         where id = #{id,jdbcType=INTEGER}
     </select>
+    <select id="selectByAppkeyIds" parameterType="java.util.List" resultMap="BaseResultMap">
+        select *
+        from ups_app_info
+        where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")" index="">
+            #{id,jdbcType=INTEGER}
+        </foreach>
+    </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         delete
         from ups_app_info

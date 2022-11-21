@@ -9,7 +9,7 @@ public enum ResultCode {
     SUCCSS(1, "成功"),
     FAIL(0, "失败");
 
-    private Integer code;
+    private Integer status;
 
     private String message;
 }
