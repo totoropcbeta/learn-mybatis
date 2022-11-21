@@ -2,10 +2,10 @@ package com.java.learnmybatis.mapper;
 
 import com.java.learnmybatis.entity.UpsAppInfo;
 import com.java.learnmybatis.entity.UpsAppInfoExample;
-import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface UpsAppInfoMapper {

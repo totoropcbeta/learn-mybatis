@@ -31,7 +31,7 @@ public class MyBatisGenerator {
         //执行生成代码
         myBatisGenerator.generate(null);
         //输出警告信息
-        for(String warning : warnings){
+        for (String warning : warnings) {
             System.out.println(warning);
         }
     }
