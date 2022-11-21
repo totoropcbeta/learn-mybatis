@@ -9,18 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Auther: Administrator
+ * @Author: yuanhang08
  * @Date: 2022/7/27 00:08
  * @Description:代码生成器
  */
 public class MyBatisGenerator {
     public static void main(String[] args) throws Exception {
         //MBG 执行过程中的警告信息
-        List<String> warnings = new ArrayList<String>();
+        List<String> warnings = new ArrayList<>();
         //当生成的代码重复时，覆盖原代码
         boolean overwrite = true;
         //读取我们的 MBG 配置文件
-        InputStream is = MyBatisGenerator.class.getResourceAsStream("/mybatisGeneratorConfig.xml");
+        InputStream is = MyBatisGenerator.class.getResourceAsStream("/generatorConfig.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(is);
         is.close();

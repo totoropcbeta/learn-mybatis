@@ -2,8 +2,12 @@ package com.java.learnmybatis.controller;
 
 import com.java.learnmybatis.entity.UpsAppInfo;
 import com.java.learnmybatis.service.UpsAppInfoService;
+import com.java.learnmybatis.vo.ResultVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,7 +28,8 @@ public class UpsAppInfoController {
 
     @RequestMapping(value = "/info/{id}", method = RequestMethod.GET)
     @ApiOperation(value = "通过id获取appkey信息")
-    public UpsAppInfo getUpsAppInfoById(@PathVariable Integer id) {
-        return upsAppInfoService.getUpsAppInfoById(id);
+    public ResultVo getUpsAppInfoById(@PathVariable Integer id) {
+        UpsAppInfo upsAppInfo = upsAppInfoService.getUpsAppInfoById(id);
+        return ResultVo.success(upsAppInfo);
     }
 }
