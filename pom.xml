@@ -52,6 +52,12 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
             <version>3.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring-plugin-core</artifactId>
+                    <groupId>org.springframework.plugin</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -63,11 +69,6 @@
             <artifactId>junit-jupiter</artifactId>
             <version>5.9.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>8.0.0.Final</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
