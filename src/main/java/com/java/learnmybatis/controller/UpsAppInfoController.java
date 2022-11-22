@@ -1,6 +1,8 @@
 package com.java.learnmybatis.controller;
 
 import com.java.learnmybatis.entity.UpsAppInfo;
+import com.java.learnmybatis.enums.appkey.FeedBackCycleType;
+import com.java.learnmybatis.enums.appkey.FeedBackStatus;
 import com.java.learnmybatis.service.UpsAppInfoService;
 import com.java.learnmybatis.vo.ResultVo;
 import io.swagger.annotations.Api;
@@ -10,7 +12,10 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yuanhang08
@@ -38,5 +43,31 @@ public class UpsAppInfoController {
             return ResultVo.fail();
         }
         return ResultVo.success(upsApps);
+    }
+
+    @RequestMapping(value = "/feed-back-status", method = RequestMethod.GET)
+    @ApiOperation(value = "获取appkey反馈状态")
+    public ResultVo getFeedBackStatus() {
+        ArrayList<Map<String, Object>> feedBackStatus = new ArrayList<>();
+        for (FeedBackStatus status : FeedBackStatus.values()) {
+            HashMap<String, Object> obj = new HashMap<>();
+            obj.put("key", status.getValue());
+            obj.put("value", status.getStatus());
+            feedBackStatus.add(obj);
+        }
+        return ResultVo.success(feedBackStatus);
+    }
+
+    @RequestMapping(value = "/feed-back-cycle-type", method = RequestMethod.GET)
+    @ApiOperation(value = "获取appkey反馈状态")
+    public ResultVo getFeedBackCycleType() {
+        ArrayList<Map<String, Object>> feedBackCycleType = new ArrayList<>();
+        for (FeedBackCycleType type : FeedBackCycleType.values()) {
+            HashMap<String, Object> obj = new HashMap<>();
+            obj.put("key", type.getValue());
+            obj.put("value", type.getType());
+            feedBackCycleType.add(obj);
+        }
+        return ResultVo.success(feedBackCycleType);
     }
 }
