@@ -5,6 +5,7 @@ import com.java.learnmybatis.enums.appkey.FeedBackCycleType;
 import com.java.learnmybatis.enums.appkey.FeedBackStatus;
 import com.java.learnmybatis.service.UpsAppInfoService;
 import com.java.learnmybatis.vo.ResultVo;
+import com.java.learnmybatis.vo.ups.AppInfoRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -71,5 +72,12 @@ public class UpsAppInfoController {
             feedBackCycleType.add(obj);
         }
         return ResultVo.success(feedBackCycleType);
+    }
+
+    @RequestMapping(value = "/info/list", method = RequestMethod.PUT)
+    @ApiOperation(value = "筛选并返回appkey列表")
+    public ResultVo getAppInfoList(@Valid @RequestBody AppInfoRequest appInfoRequest) {
+        List<UpsAppInfo> upsAppInfoList = upsAppInfoService.getUpsAppInfoList(appInfoRequest);
+        return ResultVo.success(upsAppInfoList);
     }
 }

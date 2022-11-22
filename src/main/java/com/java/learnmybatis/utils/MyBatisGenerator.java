@@ -1,4 +1,4 @@
-package com.java.learnmybatis;
+package com.java.learnmybatis.utils;
 
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;

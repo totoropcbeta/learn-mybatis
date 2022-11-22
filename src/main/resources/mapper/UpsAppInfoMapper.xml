@@ -116,6 +116,24 @@
             #{id,jdbcType=INTEGER}
         </foreach>
     </select>
+    <select id="selectUpsAppInfoList" resultMap="BaseResultMap">
+        select *
+        from ups_app_info
+        <where>
+            <if test="query != null">
+                and (appkey like concat("%",#{query},"%") or app_name like concat("%",#{query},"%"))
+            </if>
+            <if test="owner != null">
+                and (`owner` like concat("%",#{owner},"%") or `admin` like concat("%",#{owner},"%"))
+            </if>
+            <if test="feedBackStatus != null">
+                and feedback_status = #{feedBackStatus}
+            </if>
+            <if test="feedBackCycleType != null">
+                and feedback_cycle_type = #{feedBackCycleType}
+            </if>
+        </where>
+    </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         delete
         from ups_app_info
