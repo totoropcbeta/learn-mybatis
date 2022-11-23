@@ -31,4 +31,11 @@ public class ResultVo implements Serializable {
         resultVo.setMessage(ResultCode.FAIL.getMessage());
         return resultVo;
     }
+
+    public static ResultVo fail(String message) {
+        ResultVo resultVo = new ResultVo();
+        resultVo.setStatus(ResultCode.FAIL.getStatus());
+        resultVo.setMessage(message);
+        return resultVo;
+    }
 }
