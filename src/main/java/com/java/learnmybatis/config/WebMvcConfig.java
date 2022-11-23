@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
 import java.util.TimeZone;
@@ -19,7 +19,14 @@ import java.util.TimeZone;
  */
 @Configuration
 @EnableWebMvc
-public class WebMvcConfig extends WebMvcConfigurerAdapter {
+/**
+ * Spring 5.0后，WebMvcConfigurerAdapter被废弃,取代的方法有两种:
+ * ①implements WebMvcConfigurer(官方推荐)
+ * ②extends WebMvcConfigurationSupport
+ * @link https://blog.csdn.net/sdname/article/details/109718768
+ */
+public class WebMvcConfig implements WebMvcConfigurer {
+
     /**
      * 统一输出风格
      * See {@link com.fasterxml.jackson.databind.PropertyNamingStrategy.SnakeCaseStrategy} for details.
