@@ -12,6 +12,7 @@ mybatis:
   type-aliases-package: com.java.learnmybatis.entity
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true # 开启驼峰功能
 
 pagehelper:
   helperDialect: mysql # 配置数据库连接方式

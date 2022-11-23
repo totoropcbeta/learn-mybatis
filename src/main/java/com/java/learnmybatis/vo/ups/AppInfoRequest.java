@@ -13,6 +13,7 @@ import javax.validation.constraints.Min;
  */
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true) // 前端传过来的字段多了或少了不会异常
+//@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class) // 响应结果的时候(驼峰转为下划线)
 @ApiModel(value = "appkey查询参数")
 public class AppInfoRequest {
     @ApiModelProperty(value = "页码")
@@ -26,6 +27,7 @@ public class AppInfoRequest {
     @ApiModelProperty(value = "搜索词")
     private String query;
     @ApiModelProperty(value = "反馈状态")
+    //@JsonProperty(value = "feed_back_status") // 响应结果的时候(驼峰转为下划线)
     private Integer feedBackStatus;
     @ApiModelProperty(value = "反馈周期")
     private Integer feedBackCycleType;

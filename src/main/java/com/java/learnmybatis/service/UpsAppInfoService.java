@@ -41,7 +41,7 @@ public class UpsAppInfoService {
         Integer feedBackCycleType = appInfoRequest.getFeedBackCycleType();
         Integer pageNo = appInfoRequest.getPageNo();
         Integer pageSize = appInfoRequest.getPageSize();
-        PageHelper.startPage(pageNo, pageSize);
+        PageHelper.startPage(pageNo, pageSize); // 分页
         return upsAppInfoMapper.selectUpsAppInfoList(query, misId, feedBackStatus, feedBackCycleType);
 
     }

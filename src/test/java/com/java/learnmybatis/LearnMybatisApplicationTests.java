@@ -25,7 +25,7 @@ public class LearnMybatisApplicationTests {
 
     @Test
     public void testMyBatis_01() {
-        List<UpsAppInfo> upsAppInfos = upsAppInfoMapper.selectUpsAppInfoList("画像", "h", null, null);
+        List<UpsAppInfo> upsAppInfos = upsAppInfoMapper.selectUpsAppInfoList("画像", "yinlikui", null, null);
         System.out.println(upsAppInfos);
     }
 
