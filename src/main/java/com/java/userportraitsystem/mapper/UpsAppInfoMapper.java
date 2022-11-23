@@ -1,10 +1,9 @@
-package com.java.learnmybatis.mapper;
+package com.java.userportraitsystem.mapper;
 
-import com.java.learnmybatis.entity.UpsAppInfo;
-import com.java.learnmybatis.entity.UpsAppInfoExample;
+import com.java.userportraitsystem.entity.UpsAppInfo;
+import com.java.userportraitsystem.entity.UpsAppInfoExample;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -25,6 +24,7 @@ public interface UpsAppInfoMapper {
     UpsAppInfo selectByPrimaryKey(Integer id);
 
     List<UpsAppInfo> selectByAppkeyIds(List<Integer> ids);
+
     List<UpsAppInfo> selectUpsAppInfoList(@Param("query") String query, @Param("owner") String owner, @Param("feedBackStatus") Integer feedBackStatus, @Param("feedBackCycleType") Integer feedBackCycleType);
 
     int updateByExampleSelective(@Param("record") UpsAppInfo record, @Param("example") UpsAppInfoExample example);

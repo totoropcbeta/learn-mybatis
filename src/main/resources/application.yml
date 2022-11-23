@@ -3,13 +3,13 @@ server:
 spring:
   application:
     #应用名称,可以自定义
-    name: learn-mybatis
+    name: user-portrait-system
   profiles:
     active: dev
 
 mybatis:
   mapper-locations: classpath:mapper/**Mapper.xml
-  type-aliases-package: com.java.learnmybatis.entity
+  type-aliases-package: com.java.userportraitsystem.entity
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true # 开启驼峰功能

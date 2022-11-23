@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.java</groupId>
-    <artifactId>learn-mybatis</artifactId>
+    <artifactId>user-portrait-system</artifactId>
     <version>1.0.0.RELEASE</version>
-    <name>learn-mybatis</name>
-    <description>learn-mybatis</description>
+    <name>user-portrait-system</name>
+    <description>user-portrait-system</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>

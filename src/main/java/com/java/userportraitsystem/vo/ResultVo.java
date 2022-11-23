@@ -1,6 +1,6 @@
-package com.java.learnmybatis.vo;
+package com.java.userportraitsystem.vo;
 
-import com.java.learnmybatis.enums.ResultCode;
+import com.java.userportraitsystem.enums.ResultCode;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

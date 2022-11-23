@@ -1,4 +1,4 @@
-package com.java.learnmybatis.enums.appkey;
+package com.java.userportraitsystem.enums.appkey;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

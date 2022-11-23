@@ -1,13 +1,13 @@
-package com.java.learnmybatis;
+package com.java.userportraitsystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LearnMybatisApplication {
+public class UserPortraitSystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LearnMybatisApplication.class, args);
+        SpringApplication.run(UserPortraitSystemApplication.class, args);
     }
 
 }

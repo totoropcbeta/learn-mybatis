@@ -1,9 +1,9 @@
-package com.java.learnmybatis.service;
+package com.java.userportraitsystem.service;
 
 import com.github.pagehelper.PageHelper;
-import com.java.learnmybatis.entity.UpsAppInfo;
-import com.java.learnmybatis.mapper.UpsAppInfoMapper;
-import com.java.learnmybatis.vo.ups.AppInfoRequest;
+import com.java.userportraitsystem.entity.UpsAppInfo;
+import com.java.userportraitsystem.mapper.UpsAppInfoMapper;
+import com.java.userportraitsystem.vo.ups.AppInfoRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;

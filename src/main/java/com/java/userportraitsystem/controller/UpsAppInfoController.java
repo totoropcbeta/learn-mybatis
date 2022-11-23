@@ -1,11 +1,11 @@
-package com.java.learnmybatis.controller;
+package com.java.userportraitsystem.controller;
 
-import com.java.learnmybatis.entity.UpsAppInfo;
-import com.java.learnmybatis.enums.appkey.FeedBackCycleType;
-import com.java.learnmybatis.enums.appkey.FeedBackStatus;
-import com.java.learnmybatis.service.UpsAppInfoService;
-import com.java.learnmybatis.vo.ResultVo;
-import com.java.learnmybatis.vo.ups.AppInfoRequest;
+import com.java.userportraitsystem.entity.UpsAppInfo;
+import com.java.userportraitsystem.enums.appkey.FeedBackCycleType;
+import com.java.userportraitsystem.enums.appkey.FeedBackStatus;
+import com.java.userportraitsystem.service.UpsAppInfoService;
+import com.java.userportraitsystem.vo.ResultVo;
+import com.java.userportraitsystem.vo.ups.AppInfoRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

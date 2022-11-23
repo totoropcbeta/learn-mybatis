@@ -1,7 +1,7 @@
-package com.java.learnmybatis;
+package com.java.userportraitsystem;
 
-import com.java.learnmybatis.entity.UpsAppInfo;
-import com.java.learnmybatis.mapper.UpsAppInfoMapper;
+import com.java.userportraitsystem.entity.UpsAppInfo;
+import com.java.userportraitsystem.mapper.UpsAppInfoMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import java.util.List;
 
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
-public class LearnMybatisApplicationTests {
+public class UserPortraitSystemApplicationTests {
     @Autowired
     private UpsAppInfoMapper upsAppInfoMapper;
 

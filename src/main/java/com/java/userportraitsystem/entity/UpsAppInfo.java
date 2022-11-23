@@ -1,4 +1,4 @@
-package com.java.learnmybatis.entity;
+package com.java.userportraitsystem.entity;
 
 import lombok.Data;
 

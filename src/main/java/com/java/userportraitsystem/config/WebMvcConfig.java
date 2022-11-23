@@ -1,4 +1,4 @@
-package com.java.learnmybatis.config;
+package com.java.userportraitsystem.config;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;

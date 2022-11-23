@@ -1,4 +1,4 @@
-package com.java.learnmybatis.utils;
+package com.java.userportraitsystem.utils;
 
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;

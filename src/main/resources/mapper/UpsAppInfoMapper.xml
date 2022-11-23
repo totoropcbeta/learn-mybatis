@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.java.learnmybatis.mapper.UpsAppInfoMapper">
-    <resultMap id="BaseResultMap" type="com.java.learnmybatis.entity.UpsAppInfo">
+<mapper namespace="com.java.userportraitsystem.mapper.UpsAppInfoMapper">
+    <resultMap id="BaseResultMap" type="com.java.userportraitsystem.entity.UpsAppInfo">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="appkey" jdbcType="VARCHAR" property="appkey"/>
         <result column="desc" jdbcType="VARCHAR" property="desc"/>
@@ -88,7 +88,7 @@
             </foreach>
         </where>
     </sql>
-    <select id="selectByExample" parameterType="com.java.learnmybatis.entity.UpsAppInfoExample"
+    <select id="selectByExample" parameterType="com.java.userportraitsystem.entity.UpsAppInfoExample"
             resultMap="BaseResultMap">
         select *
         <if test="distinct">
@@ -139,13 +139,13 @@
         from ups_app_info
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <delete id="deleteByExample" parameterType="com.java.learnmybatis.entity.UpsAppInfoExample">
+    <delete id="deleteByExample" parameterType="com.java.userportraitsystem.entity.UpsAppInfoExample">
         delete from ups_app_info
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" parameterType="com.java.learnmybatis.entity.UpsAppInfo">
+    <insert id="insert" parameterType="com.java.userportraitsystem.entity.UpsAppInfo">
         insert into ups_app_info (id, appkey, `desc`,
                                   location, business_group, peak_qps,
                                   data_auth, creator, modifier,
@@ -165,7 +165,7 @@
                 #{feedbackStatus,jdbcType=INTEGER}, #{admin,jdbcType=VARCHAR}, #{internal,jdbcType=BIT},
                 #{authBiz,jdbcType=VARCHAR})
     </insert>
-    <insert id="insertSelective" parameterType="com.java.learnmybatis.entity.UpsAppInfo">
+    <insert id="insertSelective" parameterType="com.java.userportraitsystem.entity.UpsAppInfo">
         insert into ups_app_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -322,7 +322,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="com.java.learnmybatis.entity.UpsAppInfoExample"
+    <select id="countByExample" parameterType="com.java.userportraitsystem.entity.UpsAppInfoExample"
             resultType="java.lang.Long">
         select count(*) from ups_app_info
         <if test="_parameter != null">
@@ -443,7 +443,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="com.java.learnmybatis.entity.UpsAppInfo">
+    <update id="updateByPrimaryKeySelective" parameterType="com.java.userportraitsystem.entity.UpsAppInfo">
         update ups_app_info
         <set>
             <if test="appkey != null">
@@ -521,7 +521,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.java.learnmybatis.entity.UpsAppInfo">
+    <update id="updateByPrimaryKey" parameterType="com.java.userportraitsystem.entity.UpsAppInfo">
         update ups_app_info
         set appkey              = #{appkey,jdbcType=VARCHAR},
             `desc`              = #{desc,jdbcType=VARCHAR},
