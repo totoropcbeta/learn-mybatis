@@ -40,4 +40,18 @@ public class GlobalExceptionHandler {
         }
         return ResultVo.fail();
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseBody
+    public ResultVo handleIllegalArgumentException(IllegalArgumentException exception) {
+        return exception == null ? ResultVo.fail() : ResultVo.fail(exception.getMessage());
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    @ResponseBody
+    public ResultVo handleRuntimeException(RuntimeException exception) {
+        return exception == null ? ResultVo.fail() : ResultVo.fail(exception.getMessage());
+    }
+
+
 }
