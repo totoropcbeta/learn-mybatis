@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.userportraitsystem.mapper.UpsAppInfoToReviewMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.java.userportraitsystem.entity.UpsAppInfoToReview">
+        <id column="id" property="id"/>
+        <result column="app_id" property="appId"/>
+        <result column="appkey" property="appkey"/>
+        <result column="desc" property="desc"/>
+        <result column="location" property="location"/>
+        <result column="business_group" property="businessGroup"/>
+        <result column="peak_qps" property="peakQps"/>
+        <result column="data_auth" property="dataAuth"/>
+        <result column="creator" property="creator"/>
+        <result column="modifier" property="modifier"/>
+        <result column="owner" property="owner"/>
+        <result column="modtime" property="modtime"/>
+        <result column="online" property="online"/>
+        <result column="status" property="status"/>
+        <result column="bu" property="bu"/>
+        <result column="app_name" property="appName"/>
+        <result column="app_desc" property="appDesc"/>
+        <result column="bgbu" property="bgbu"/>
+        <result column="feedback_cycle_type" property="feedbackCycleType"/>
+        <result column="feedback_date" property="feedbackDate"/>
+        <result column="app_attr" property="appAttr"/>
+        <result column="admin" property="admin"/>
+        <result column="auth_flow_id" property="authFlowId"/>
+        <result column="auth_flow_start_time" property="authFlowStartTime"/>
+        <result column="auth_flow_end_time" property="authFlowEndTime"/>
+        <result column="j_project_label_ids" property="jProjectLabelIds"/>
+    </resultMap>
+
+</mapper>

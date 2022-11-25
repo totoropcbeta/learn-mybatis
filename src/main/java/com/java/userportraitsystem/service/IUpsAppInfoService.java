@@ -9,7 +9,7 @@ import java.util.List;
  * @author yuanhang08
  * @date 2022年11月24日
  */
-public interface UpsAppInfoService {
+public interface IUpsAppInfoService {
     UpsAppInfo getUpsAppInfoById(Integer id);
 
     List<UpsAppInfo> getUpsAppInfoByIds(List<Integer> ids);

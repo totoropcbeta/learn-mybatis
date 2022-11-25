@@ -3,7 +3,7 @@ package com.java.userportraitsystem.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.java.userportraitsystem.entity.UpsAppInfo;
 import com.java.userportraitsystem.mapper.UpsAppInfoMapper;
-import com.java.userportraitsystem.service.UpsAppInfoService;
+import com.java.userportraitsystem.service.IUpsAppInfoService;
 import com.java.userportraitsystem.vo.ups.AppInfoRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
@@ -19,7 +19,7 @@ import java.util.List;
  */
 @Service
 @Slf4j
-public class UpsAppInfoServiceImpl implements UpsAppInfoService {
+public class UpsAppInfoServiceImpl implements IUpsAppInfoService {
     @Resource
     private UpsAppInfoMapper upsAppInfoMapper;
 

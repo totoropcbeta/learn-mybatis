@@ -3,14 +3,13 @@ package com.java.userportraitsystem.controller;
 import com.java.userportraitsystem.entity.UpsAppInfo;
 import com.java.userportraitsystem.enums.appkey.FeedBackCycleType;
 import com.java.userportraitsystem.enums.appkey.FeedBackStatus;
-import com.java.userportraitsystem.service.UpsAppInfoService;
+import com.java.userportraitsystem.service.IUpsAppInfoService;
 import com.java.userportraitsystem.vo.ResultVo;
 import com.java.userportraitsystem.vo.ups.AppInfoRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.apache.commons.collections4.CollectionUtils;
-import org.springframework.util.Assert;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,7 +32,7 @@ import java.util.Map;
 @Validated
 public class UpsAppInfoController {
     @Resource
-    private UpsAppInfoService upsAppInfoService;
+    private IUpsAppInfoService upsAppInfoService;
 
     @RequestMapping(value = "/info/{id}", method = RequestMethod.GET)
     @ApiOperation(value = "通过id获取appkey信息")
