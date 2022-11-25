@@ -1,11 +1,11 @@
 package com.java.userportraitsystem.mapper;
 
-import com.java.userportraitsystem.entity.UpsAppInfoToReview;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.java.userportraitsystem.entity.UpsAppInfoToReview;
 
 /**
  * <p>
- *  Mapper 接口
+ * appkey申请审批信息 Mapper 接口
  * </p>
  *
  * @author 大脸猫
