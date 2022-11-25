@@ -22,4 +22,6 @@ public interface UpsAppInfoMapper extends BaseMapper<UpsAppInfo> {
     List<UpsAppInfo> selectByAppkeyIds(List<Integer> ids);
 
     List<UpsAppInfo> selectUpsAppInfoList(String query, String misId, Integer feedBackStatus, Integer feedBackCycleType);
+
+    void insertUpsAppkeySelective(UpsAppInfo upsAppInfo); // 返回的是受影响行数
 }

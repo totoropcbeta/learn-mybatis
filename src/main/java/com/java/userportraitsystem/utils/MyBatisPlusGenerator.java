@@ -51,7 +51,7 @@ public class MyBatisPlusGenerator {
         templateConfig.setService(""); // 使用空字符串 控制 不生成 Service
         templateConfig.setServiceImpl(""); // 使用空字符串 控制 不生成 ServiceImpl
         //templateConfig.setMapper(""); // 使用空字符串 控制 不生成 Mapper
-        //templateConfig.setXml(""); // 使用空字符串 控制 不生成 Xml
+        templateConfig.setXml(null); // 使用null 控制在com/java/userportraitsystem/mapper 不生成 Xml
         autoGenerator.setTemplate(templateConfig);
 
         // 数据源配置

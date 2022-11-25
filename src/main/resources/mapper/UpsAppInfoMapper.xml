@@ -60,4 +60,154 @@
             </if>
         </where>
     </select>
+    <insert id="insertUpsAppkeySelective" parameterType="com.java.userportraitsystem.entity.UpsAppInfo">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into ups_app_info
+        <!--prefix 前缀 suffix 后缀 suffixOverrides 去掉结束的符号-->
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="appkey != null">
+                appkey,
+            </if>
+            <if test="desc != null">
+                `desc`,
+            </if>
+            <if test="location != null">
+                location,
+            </if>
+            <if test="businessGroup != null">
+                business_group,
+            </if>
+            <if test="peakQps != null">
+                peak_qps,
+            </if>
+            <if test="dataAuth != null">
+                data_auth,
+            </if>
+            <if test="creator != null">
+                creator,
+            </if>
+            <if test="modifier != null">
+                modifier,
+            </if>
+            <if test="addtime != null">
+                addtime,
+            </if>
+            <if test="modtime != null">
+                modtime,
+            </if>
+            <if test="owner != null">
+                `owner`,
+            </if>
+            <if test="visitAllLabel != null">
+                visit_all_label,
+            </if>
+            <if test="bu != null">
+                bu,
+            </if>
+            <if test="appName != null">
+                app_name,
+            </if>
+            <if test="appDesc != null">
+                app_desc,
+            </if>
+            <if test="appAttr != null">
+                app_attr,
+            </if>
+            <if test="bgbu != null">
+                bgbu,
+            </if>
+            <if test="feedbackCycleType != null">
+                feedback_cycle_type,
+            </if>
+            <if test="feedbackDate != null">
+                feedback_date,
+            </if>
+            <if test="feedbackStatus != null">
+                feedback_status,
+            </if>
+            <if test="admin != null">
+                `admin`,
+            </if>
+            <if test="internal != null">
+                internal,
+            </if>
+            <if test="authBiz != null">
+                auth_biz,
+            </if>
+        </trim>
+        <trim prefix=" values (" suffix=")" suffixOverrides=",">
+            <if test="appkey != null">
+                #{appkey},
+            </if>
+            <if test="desc != null">
+                #{desc},
+            </if>
+            <if test="location != null">
+                #{location},
+            </if>
+            <if test="businessGroup != null">
+                #{businessGroup},
+            </if>
+            <if test="peakQps != null">
+                #{peakQps},
+            </if>
+            <if test="dataAuth != null">
+                #{dataAuth},
+            </if>
+            <if test="creator != null">
+                #{creator},
+            </if>
+            <if test="modifier != null">
+                #{modifier},
+            </if>
+            <if test="addtime != null">
+                #{addtime},
+            </if>
+            <if test="modtime != null">
+                #{modtime},
+            </if>
+            <if test="owner != null">
+                #{owner},
+            </if>
+            <if test="visitAllLabel != null">
+                #{visitAllLabel},
+            </if>
+            <if test="bu != null">
+                #{bu},
+            </if>
+            <if test="appName != null">
+                #{appName},
+            </if>
+            <if test="appDesc != null">
+                #{appDesc},
+            </if>
+            <if test="appAttr != null">
+                #{appAttr},
+            </if>
+            <if test="bgbu != null">
+                #{bgbu},
+            </if>
+            <if test="feedbackCycleType != null">
+                #{feedbackCycleType},
+            </if>
+            <if test="feedbackDate != null">
+                #{feedbackDate},
+            </if>
+            <if test="feedbackStatus != null">
+                #{feedbackStatus},
+            </if>
+            <if test="admin != null">
+                #{admin},
+            </if>
+            <if test="internal != null">
+                #{internal},
+            </if>
+            <if test="authBiz != null">
+                #{authBiz},
+            </if>
+        </trim>
+    </insert>
+
 </mapper>

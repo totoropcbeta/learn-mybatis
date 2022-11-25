@@ -20,7 +20,7 @@ public class SwaggerConfig {
 
         return new Docket(DocumentationType.OAS_30)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.java.learnmybatis.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.java.userportraitsystem.controller"))
                 .build()
                 .apiInfo(createApiInfo());
 

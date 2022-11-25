@@ -2,6 +2,7 @@ package com.java.userportraitsystem.service;
 
 import com.java.userportraitsystem.entity.UpsAppInfo;
 import com.java.userportraitsystem.vo.ups.AppInfoRequest;
+import com.java.userportraitsystem.vo.ups.UpsAppinfoRequest;
 
 import java.util.List;
 
@@ -15,5 +16,7 @@ public interface IUpsAppInfoService {
     List<UpsAppInfo> getUpsAppInfoByIds(List<Integer> ids);
 
     List<UpsAppInfo> getUpsAppInfoList(AppInfoRequest appInfoRequest);
+
+    int createUpsAppkeyApply(UpsAppinfoRequest upsAppinfoRequest);
 
 }
