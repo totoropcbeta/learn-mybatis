@@ -1,4 +1,4 @@
-package com.java.learnmybatis.config;
+package com.java.userportraitsystem.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.java.learnmybatis.entity;
+package com.java.userportraitsystem.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
