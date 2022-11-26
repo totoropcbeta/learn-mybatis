@@ -32,7 +32,7 @@ public class UpsAppinfoRequest {
     private Boolean location;
 
     @ApiModelProperty(value = "事业群, 0:平台, 1:餐饮, 2:到综, 3:外卖, 4:酒旅, 5:猫眼, 6:广告, 7:其他")
-    private Integer businessGroup;
+    private Integer businessGroup = 0;
 
     @ApiModelProperty(value = "qps调用峰值")
     private Integer peakQps;

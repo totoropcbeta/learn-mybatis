@@ -31,7 +31,7 @@ public class SwaggerConfig {
      */
     @Bean
     public ApiInfo createApiInfo() {
-        Contact contact = new Contact("大脸猫", "http://localhost:8081/swagger-ui/", "957584602@qq.com");
+        Contact contact = new Contact("大脸猫", "http://localhost:8080/swagger-ui/", "957584602@qq.com");
 
         return new ApiInfoBuilder()
                 .title("用户标签管理系统Demo")

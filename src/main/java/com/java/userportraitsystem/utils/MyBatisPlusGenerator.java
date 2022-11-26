@@ -40,19 +40,10 @@ public class MyBatisPlusGenerator {
         // 自定义文件命名, 注意 %s 会自动填充表实体属性！
         //gc.setControllerName("%sController");
         //gc.setServiceName("%sService");
-        //gc.setServiceImplName("I%sServiceImpl"); // 设置生成的Service接口的名字的首字母是否为I
+        //gc.setServiceImplName("%sServiceImpl"); // 设置生成的Service接口的名字的首字母是否为I Service默认生成会有I前缀
         //gc.setMapperName("%sMapper");
         //gc.setXmlName("%sMapper");
         autoGenerator.setGlobalConfig(gc);
-
-        // 配置模板 控制是否生成 Controller Service ServiceImpl Mapper Xml
-        TemplateConfig templateConfig = new TemplateConfig();
-        templateConfig.setController(""); // 使用空字符串 控制 不生成 Controller
-        templateConfig.setService(""); // 使用空字符串 控制 不生成 Service
-        templateConfig.setServiceImpl(""); // 使用空字符串 控制 不生成 ServiceImpl
-        //templateConfig.setMapper(""); // 使用空字符串 控制 不生成 Mapper
-        templateConfig.setXml(null); // 使用null 控制在com/java/userportraitsystem/mapper 不生成 Xml
-        autoGenerator.setTemplate(templateConfig);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
@@ -84,6 +75,16 @@ public class MyBatisPlusGenerator {
         pc.setMapper("mapper");
         pc.setEntity("entity");
         autoGenerator.setPackageInfo(pc);
+
+        // 配置模板 控制是否生成 Controller Service ServiceImpl Mapper Xml
+        TemplateConfig templateConfig = new TemplateConfig();
+        templateConfig.setController(null); // 使用空字符串或null 控制 不生成 Controller
+        templateConfig.setService(null); // 使用空字符串或null 控制 不生成 Service
+        templateConfig.setServiceImpl(null); // 使用空字符串或null 控制 不生成 ServiceImpl
+        //templateConfig.setMapper(null); // 使用空字符串或null 控制 不生成 Mapper
+        templateConfig.setXml(null); // 已经另外配置了xml输出路径 使用null 控制在主路径 不生成 Xml
+        autoGenerator.setTemplate(templateConfig);
+
         // 自定义配置
         InjectionConfig cfg = new InjectionConfig() {
             @Override

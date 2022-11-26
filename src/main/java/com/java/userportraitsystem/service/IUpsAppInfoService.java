@@ -1,5 +1,6 @@
 package com.java.userportraitsystem.service;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.java.userportraitsystem.entity.UpsAppInfo;
 import com.java.userportraitsystem.vo.ups.AppInfoRequest;
 import com.java.userportraitsystem.vo.ups.UpsAppinfoRequest;
