@@ -2,9 +2,8 @@ package com.java.userportraitsystem;
 
 import com.java.userportraitsystem.entity.UpsAppInfo;
 import com.java.userportraitsystem.mapper.UpsAppInfoMapper;
-import com.java.userportraitsystem.service.IUpsAppInfoService;
+import com.java.userportraitsystem.service.UpsAppInfoService;
 import com.java.userportraitsystem.vo.ups.AppInfoRequest;
-import com.java.userportraitsystem.vo.ups.UpsAppinfoRequest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,7 @@ public class UserPortraitSystemApplicationTests {
     private UpsAppInfoMapper upsAppInfoMapper;
 
     @Autowired
-    private IUpsAppInfoService iUpsAppInfoService;
+    private UpsAppInfoService iUpsAppInfoService;
 
     @Test
     public void testMyBatis() {
