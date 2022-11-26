@@ -155,6 +155,7 @@
                     <!--配置文件的位置-->
                     <configurationFile>src/main/resources/config/generatorConfig.xml</configurationFile>
                     <verbose>true</verbose>
+                    <!--MyBatis Generator 只会覆盖旧的 po、dao、而 *mapper.xml 不会覆盖,而是追加,这样做的目的是防止用户自己写的 sql 语句一不小心都被 MyBatis Generator 给覆盖了-->
                     <overwrite>true</overwrite>
                 </configuration>
                 <executions>

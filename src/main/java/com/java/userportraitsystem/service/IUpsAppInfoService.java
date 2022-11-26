@@ -18,6 +18,8 @@ public interface IUpsAppInfoService {
 
     List<UpsAppInfo> getUpsAppInfoList(AppInfoRequest appInfoRequest);
 
+    List<UpsAppInfo> getAllUpsAppInfo(AppInfoRequest appInfoRequest);
+
     int createUpsAppkeyApply(UpsAppinfoRequest upsAppinfoRequest);
 
 }

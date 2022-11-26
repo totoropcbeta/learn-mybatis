@@ -1,8 +1,8 @@
 package com.java.userportraitsystem.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.pagehelper.PageHelper;
 import com.java.userportraitsystem.entity.UpsAppInfo;
+import com.java.userportraitsystem.entity.UpsAppInfoExample;
 import com.java.userportraitsystem.mapper.UpsAppInfoMapper;
 import com.java.userportraitsystem.service.IUpsAppInfoService;
 import com.java.userportraitsystem.vo.ups.AppInfoRequest;
@@ -54,6 +54,18 @@ public class UpsAppInfoServiceImpl implements IUpsAppInfoService {
     }
 
     @Override
+    public List<UpsAppInfo> getAllUpsAppInfo(AppInfoRequest appInfoRequest) {
+        Integer feedBackStatus = appInfoRequest.getFeedBackStatus();
+        Integer feedBackCycleType = appInfoRequest.getFeedBackCycleType();
+        Integer pageNo = appInfoRequest.getPageNo();
+        Integer pageSize = appInfoRequest.getPageSize();
+        PageHelper.startPage(pageNo, pageSize); // 分页
+        UpsAppInfoExample upsAppInfoExample = new UpsAppInfoExample();
+        upsAppInfoExample.createCriteria().andFeedbackCycleTypeEqualTo(feedBackCycleType).andFeedbackStatusEqualTo(feedBackStatus);
+        return upsAppInfoMapper.selectByExample(upsAppInfoExample);
+    }
+
+    @Override
     @Transactional // 开启事务控制
     public int createUpsAppkeyApply(UpsAppinfoRequest upsAppinfoRequest) {
         UpsAppInfo upsAppInfo = new UpsAppInfo();
@@ -64,7 +76,7 @@ public class UpsAppInfoServiceImpl implements IUpsAppInfoService {
             dataAuth.add("163");
         }
         upsAppInfo.setDataAuth(dataAuth.toString());
-        upsAppInfoMapper.insertUpsAppkeySelective(upsAppInfo);
+        upsAppInfoMapper.insertSelective(upsAppInfo);
         return upsAppInfo.getId(); // 返回最新的主键ID
     }
 }

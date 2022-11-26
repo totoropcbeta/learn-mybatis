@@ -6,8 +6,7 @@
 <generatorConfiguration>
     <classPathEntry
             location="/Users/yuanhang/.m2/repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"/>
-
-    <context id="my-blog-generator-config" targetRuntime="MyBatis3">
+    <context id="generatorConfig" targetRuntime="MyBatis3">
 
         <!-- 生成的Java文件的编码 -->
         <property name="javaFileEncoding" value="utf-8"/>
@@ -19,6 +18,7 @@
 
         <!--创建Java类时对注释进行控制-->
         <commentGenerator>
+            <!-- 不希望生成的注释中包含时间戳 -->
             <property name="suppressDate" value="true"/>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <property name="suppressAllComments" value="true"/>
@@ -27,18 +27,22 @@
         <!--数据库地址及登陆账号密码 改成你自己的配置-->
         <jdbcConnection
                 driverClass="com.mysql.jdbc.Driver"
-                connectionURL="jdbc:mysql://localhost:3306/utvsdb?serverTimezone=Asia/Shanghai&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=false&amp;allowPublicKeyRetrieval=true"
+                connectionURL="jdbc:mysql://localhost:3306/utvsdb"
                 userId="root"
                 password="123456">
         </jdbcConnection>
 
         <javaTypeResolver>
+            <!--是否使用 bigDecimal，默认false。
+        false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer
+        true，把JDBC DECIMAL 和 NUMERIC 类型解析为java.math.BigDecimal-->
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <!--生成实体类设置-->
-        <javaModelGenerator targetPackage="com.java.userportraitsystem" targetProject="src/main/java">
+        <!--生成实体类设置 由mybatis-plus生成-->
+        <javaModelGenerator targetPackage="com.java.userportraitsystem.entity" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
+            <!-- 是否针对string类型的字段在set方法中进行修剪，默认false -->
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
@@ -47,8 +51,9 @@
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <!--生成Dao类设置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.java.userportraitsystem"
+        <!--对应的Mapper接口类文件-->
+        <!--type="ANNOTATEDMAPPER",接口的实现通过注解写在接口上面-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.java.userportraitsystem.mapper"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
