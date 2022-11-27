@@ -1,4 +1,4 @@
-package com.java.userportraitsystem.entity;
+package com.java.userportraitsystem.vo.ups;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -6,27 +6,18 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
-import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
- * <p>
- * appkey授权信息
- * </p>
- *
- * @author 大脸猫
- * @since 2022-11-26
+ * @author yuanhang08
+ * @date 2022年11月25日
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
-@ApiModel(value = "UpsAppInfo对象", description = "appkey授权信息")
-public class UpsAppInfo implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-
+@ApiModel(value = "appkey注册申请信息")
+public class UpsAppinfoRequest {
     @ApiModelProperty(value = "primary key")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
@@ -41,13 +32,16 @@ public class UpsAppInfo implements Serializable {
     private Boolean location;
 
     @ApiModelProperty(value = "事业群, 0:平台, 1:餐饮, 2:到综, 3:外卖, 4:酒旅, 5:猫眼, 6:广告, 7:其他")
-    private Integer businessGroup;
+    private Integer businessGroup = 0;
 
     @ApiModelProperty(value = "qps调用峰值")
     private Integer peakQps;
 
     @ApiModelProperty(value = "有权限的标签列表")
-    private String dataAuth;
+    private List<String> dataAuth;
+
+    @ApiModelProperty(value = "申请接口类型列表")
+    private List<String> apiAuth;
 
     @ApiModelProperty(value = "创建人misid")
     private String creator;
@@ -100,4 +94,5 @@ public class UpsAppInfo implements Serializable {
 
     @ApiModelProperty(value = "appkey对应拥有的各个biz的权限，组织例如1,2,3,4,5,6")
     private String authBiz;
+
 }

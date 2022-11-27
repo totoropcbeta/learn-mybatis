@@ -3,9 +3,10 @@ package com.java.userportraitsystem.controller;
 import com.java.userportraitsystem.entity.UpsAppInfo;
 import com.java.userportraitsystem.enums.appkey.FeedBackCycleType;
 import com.java.userportraitsystem.enums.appkey.FeedBackStatus;
-import com.java.userportraitsystem.service.IUpsAppInfoService;
+import com.java.userportraitsystem.service.UpsAppInfoService;
 import com.java.userportraitsystem.vo.ResultVo;
 import com.java.userportraitsystem.vo.ups.AppInfoRequest;
+import com.java.userportraitsystem.vo.ups.UpsAppinfoRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -32,7 +33,7 @@ import java.util.Map;
 @Validated
 public class UpsAppInfoController {
     @Resource
-    private IUpsAppInfoService upsAppInfoService;
+    private UpsAppInfoService upsAppInfoService;
 
     @RequestMapping(value = "/info/{id}", method = RequestMethod.GET)
     @ApiOperation(value = "通过id获取appkey信息")
@@ -79,5 +80,14 @@ public class UpsAppInfoController {
     public ResultVo getAppInfoList(@Valid @RequestBody AppInfoRequest appInfoRequest) {
         List<UpsAppInfo> upsAppInfoList = upsAppInfoService.getUpsAppInfoList(appInfoRequest);
         return ResultVo.success(upsAppInfoList);
+    }
+
+    @RequestMapping(value = "/apply", method = RequestMethod.POST)
+    @ApiOperation(value = "注册appkey")
+    public ResultVo createUpsAppkeyApply(@Valid @RequestBody UpsAppinfoRequest upsAppinfoRequest) {
+        int appkeyId = upsAppInfoService.createUpsAppkeyApply(upsAppinfoRequest);
+        HashMap<Object, Object> data = new HashMap<>();
+        data.put("id", appkeyId);
+        return ResultVo.success(data);
     }
 }
